@@ -14,15 +14,25 @@ function App() {
   const addValue = () => {
     //counter = counter + 1;
     console.log("clicked", counter);
-    setCounter(counter + 1)
+    if(counter >=20){
+      console.log("Can't be greater than 20");
+    }
+    else{
+      setCounter(counter + 1)
+    }
   };
 
 
   const removeValue = () =>{
     console.log("clicked", counter);
-    setCounter(counter - 1)
+    if(counter <= 0){
+      console.log("Sorry, can't go negative")
+    }
+    else{
+      setCounter(counter - 1)
+    }
   }
-
+  
   return (
     <>
       <h1>Hello it's me</h1>
