@@ -2,6 +2,7 @@ import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 
+// Jo App.jsx hai uske andar ek method hi hai toh yaha likh sakte hai
 
 // function MyApp(){
 //     return (
@@ -46,6 +47,8 @@ const ReactElement = {
 // Jab sara tree ban jata hai uske baad varaible injection hota hai, aur ye sidha ke sidha object ke andar inject ho jata hai.
 const anotherUser = "Jayant"
 
+
+// Ye jo react.createElement hai ye transpiler inject karta hai internally React mai.
 const ReactElement3 = React.createElement(
     'a',
     {href: 'https://google.com',target: '_blank'},
@@ -72,16 +75,16 @@ createRoot(document.getElementById('root')).render(
     //<App />
 
     // Ye jo MyApp hai wo bas ek function hai aur transpiled hogya hai bas
-    // Ye function ki trah bhi execute ho sakta hai, But karnege nahi
+    // Ye function ki trah bhi execute ho sakta hai, But karnege nahi kyonki React notation ke hisaab se <MyApp /> wala sahi hai.
 
     // Myapp()
-
     //<MyApp/>
+
 
     // Object thodi ayese execute hoga, function hona jaruri hai
     //<ReactElement /> 
 
-    // Ye isley nahi chal raha hai because may be iska render function jo likha ho uske methods ke name alag ho..
+    // Ye isley nahi chal raha hai because may be iska render function jo likha ho uske methods ya methods ki properties ka name alag ho..
     //ReactElement
 
 
