@@ -1,6 +1,13 @@
+import Chai from "./chai"
 function App() {
   return (
-   <h1>Chai aur react with vite | Jatin Sharma</h1>
+
+    // This is fragment wala concept, we can return multiple elements here
+    <>
+      <h1>Chai aur react with vite | Jatin Sharma</h1>
+      <Chai/>
+    </>
+  
   )
 }
 
