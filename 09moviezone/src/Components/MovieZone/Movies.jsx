@@ -1,4 +1,5 @@
 import React from 'react'
+import {movies} from './data.js'
 
 const Movies = () => {
   return (
