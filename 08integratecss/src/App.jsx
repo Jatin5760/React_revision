@@ -1,6 +1,7 @@
 import React from "react";
 //import Laptop from "./Components/Laptop";
-import Events from "./Components/Events";
+//import Events from "./Components/Events";
+import Counter from "./Components/Counter";
 
 const App = () => {
   return (
@@ -13,7 +14,14 @@ const App = () => {
       </div>
 
       {/* This is events component codes */}
+      <div>
       <Events />
+      </div>
+
+      {/* This is counter component code */}
+      <div>
+      <Counter />
+      </div>
     </>
   );
 };
