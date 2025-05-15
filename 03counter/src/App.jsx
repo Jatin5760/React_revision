@@ -6,6 +6,7 @@ function App() {
   // Ye ek hook hai jo UI mai cheeze update kar sakta hai, aur UI mai changes reflect kar sakta hai.
   // SetCounter ek method hai ya function kehlo, ye responsible hai counter variable ko update karne ke liye.
   // Jaha Jaha bhi counter variable ayega webpage mai waha ye update kardega ek baar mai hi
+  // UseState batches mai cheezo ko bhejta hai
   let [counter, setCounter] = useState(10)
 
 
@@ -18,7 +19,10 @@ function App() {
       console.log("Can't be greater than 20");
     }
     else{
-      setCounter(counter + 1)
+      setCounter((prevCounter) => prevCounter + 1)
+      setCounter((prevCounter) => prevCounter + 1)
+      setCounter((prevCounter) => prevCounter + 1)
+      //setCounter(counter + 1)
     }
   };
 
@@ -29,7 +33,18 @@ function App() {
       console.log("Sorry, can't go negative")
     }
     else{
-      setCounter(counter - 1)
+      // Doest have previous value to update it.
+
+      // setCounter(counter - 1)
+      // setCounter(counter - 1)
+      // setCounter(counter - 1)
+      // setCounter(counter - 1)
+
+
+      setCounter((prevCounter) => prevCounter - 1)
+      setCounter((prevCounter) => prevCounter - 1)
+      setCounter((prevCounter) => prevCounter - 1)
+
     }
   }
   
