@@ -5,15 +5,15 @@ import Events from "./Components/Events";
 const App = () => {
   return (
     <>
-    {/* This is laptop component codes */}
+      {/* This is laptop component codes */}
       <div>
-        <Laptop name="HP" model="Probook" price={75000} />
+        {/* <Laptop name="HP" model="Probook" price={75000} />
         <Laptop name="Lenevo" model="Yoga" price={50000} />
-        <Laptop name="Apple" model="Macbook-Air-M1" price={95000} />
+        <Laptop name="Apple" model="Macbook-Air-M1" price={95000} /> */}
       </div>
 
-    {/* This is events component codes */}
-
+      {/* This is events component codes */}
+      <Events />
     </>
   );
 };
