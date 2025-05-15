@@ -1,7 +1,8 @@
 import React from "react";
 //import Laptop from "./Components/Laptop";
 //import Events from "./Components/Events";
-import Counter from "./Components/Counter";
+//import Counter from "./Components/Counter";
+import ShowProduct from "./Components/ShowProduct";
 
 const App = () => {
   return (
@@ -20,8 +21,15 @@ const App = () => {
 
       {/* This is counter component code */}
       <div>
-      <Counter />
+      {/* <Counter /> */}
       </div>
+
+      {/* Show product component code */}
+      <div>
+        <ShowProduct />
+      </div>
+
+      
     </>
   );
 };
