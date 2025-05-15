@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Person3 = ({name, age, position}) => {
+const Person3 = ({name, age, position, citizen}) => {
 
     // if(age > 80){
     //     console.log("No you are not PM");
@@ -10,7 +10,7 @@ const Person3 = ({name, age, position}) => {
     // }
 
     // Ternary Operator ()?():()
-    (age>80) ? (console.log("No you are not PM")) : console.log("Yes you are PM")
+    // (age>80) ? (console.log("No you are not PM")) : console.log("Yes you are PM")
 
 
   return (
@@ -19,9 +19,11 @@ const Person3 = ({name, age, position}) => {
         <h1>
             Name: {name}
         </h1>
-
         <h3>
-            {age>80 ? <h1>No you are not PM</h1> : <h1>Yes you are PM</h1>}
+            {age>80 ? <h3>No you are not PM</h3> : <h3>Yes you are PM</h3>}
+        </h3>
+        <h3> 
+            {citizen == true ? <h3>Yes eligible</h3> : <h3>Not eligible</h3>}
         </h3>
       </div>
     </>

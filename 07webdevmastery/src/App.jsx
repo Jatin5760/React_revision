@@ -49,8 +49,8 @@ const App = () => {
       <br />
 
       <div>
-        <Person3 name="Modi" age={74} position="Prime Minister" />
-        <Person3 name="Donald Trump" age={85} position="Prime Minister" />
+        <Person3 name="Modi" age={74} position="Prime Minister" citizen = {true}/>
+        <Person3 name="Donald Trump" age={85} position="Prime Minister" citizen = {false} />
       </div>
     </>
   );
