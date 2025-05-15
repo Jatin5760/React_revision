@@ -15,7 +15,7 @@ const App = () => {
 
       {/* This is events component codes */}
       <div>
-      <Events />
+      {/* <Events /> */}
       </div>
 
       {/* This is counter component code */}
