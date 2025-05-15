@@ -2,7 +2,8 @@ import React from "react";
 //import Laptop from "./Components/Laptop";
 //import Events from "./Components/Events";
 //import Counter from "./Components/Counter";
-import ShowProduct from "./Components/ShowProduct";
+//import ShowProduct from "./Components/ShowProduct";
+import FilterProduct from "./Components/FilterProduct";
 
 const App = () => {
   return (
@@ -26,10 +27,15 @@ const App = () => {
 
       {/* Show product component code */}
       <div>
-        <ShowProduct />
+        {/* <ShowProduct /> */}
       </div>
 
-      
+      {/* Filter product component code */}
+      <div>
+        <FilterProduct />
+      </div>
+
+
     </>
   );
 };
