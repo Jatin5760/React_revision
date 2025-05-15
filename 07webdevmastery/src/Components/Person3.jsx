@@ -12,6 +12,8 @@ const Person3 = ({name, age, position, citizen}) => {
     // Ternary Operator ()?():()
     // (age>80) ? (console.log("No you are not PM")) : console.log("Yes you are PM")
 
+    // Boolean operator
+
 
   return (
     <>
@@ -25,6 +27,11 @@ const Person3 = ({name, age, position, citizen}) => {
         <h3> 
             {citizen == true ? <h3>Yes eligible</h3> : <h3>Not eligible</h3>}
         </h3>
+        <h3>
+            {citizen && <p>You are eligible for PM</p>}
+        </h3>
+
+        <br/>
       </div>
     </>
   )
