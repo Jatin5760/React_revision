@@ -1,0 +1,27 @@
+ Create root method behind the scene ek dom like structure ko create karta hai.
+ then main dom aur created dom ko compare karta hai, aur unhi cheezo ko update karta hai jo ui mai update hui hai.
+
+ jabki browser pure dom ko remove karke repaint karta hai yani web strcutre wapas se banta hai isi ko reload kehte hai.
+
+ virtual dom mai jo value change hui hai wahi dom mai update hoti hai pura dom repaint nahi hota
+
+
+ Har UI ko instant update karne ki jarurat nahi hai.
+
+ Virtual dom ko update karne wali algorithm React Fibre kehte hai.
+
+ React fibre React core algorithm ka implementation hai,
+
+ Isme agar multiple updates atte hai toh ham log update ko pause kar sakte hai, through hydration process.                                                                                                             
+React ka ek algo hai jo do dom ke differnece ko compare karta hai iss algo ko reconciliation kehte hai.
+
+reconciliation hi wahi algo hai jo virtual dom ke behind the scene mai chalta hai
+
+
+
+
+React Fibre:
+1) Pause work and come back later
+2) Assign priority
+3) Abort the work
+
