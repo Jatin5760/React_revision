@@ -21,10 +21,19 @@ const App = () => {
       {/* <Test /> */}
 
       {/* This is the example of resuable components */}
-      <Product title="S23" brand="Samsung" price ={75000} />
-      <Product title="S24" brand="Samsung" price = {85000}/>
-      <Product title="S25" brand="Samsung" price = {95000}/>
-      <Product title="S26" brand="Samsung" price = {99000}/>
+      <Product
+        title="S23"
+        brand="Samsung"
+        price={75000}
+        ram="8gb"
+        rom="128gb"
+        camera="50mp"
+      />
+
+      {/* Isme extra property pass nahi ki hai toh inki property empty rehti hai */}
+      <Product title="S24" brand="Samsung" price={85000} />
+      <Product title="S25" brand="Samsung" price={95000} />
+      <Product title="S26" brand="Samsung" price={99000} />
     </>
   );
 };

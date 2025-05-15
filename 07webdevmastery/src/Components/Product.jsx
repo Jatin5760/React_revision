@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Product = (props) => {
+// Yaha props ke jagah hamne destructure kar diya object ko phele parameter mai props diya tha
+const Product = ({title, brand, price, ram, rom, camera}) => {
     // const obj = {
     //     title: "Galaxy S24 Ultra",
     //     brand: "Samsung",
@@ -10,9 +11,16 @@ const Product = (props) => {
 
   return (
     <div>
-      <h2> Mobile Name: {props.title}</h2>
-      <h2> Brand Name:{props.brand}</h2>
-      <h2> Price: {props.price}</h2>
+      {/* Again and again we can't use props so we will destructure the object */}
+      {/* <h2> Mobile Name: {props.title}</h2> */}
+
+      <h2> Mobile Name: {title}</h2>
+      <h2> Brand Name:{brand}</h2>
+      <h2> Price: {price}</h2>
+      <h2> Ram: {ram}</h2>
+      <h2> Rom: {rom}</h2>
+      <h2> Camera: {camera}</h2>
+  
       <br/>
     </div>
   )
