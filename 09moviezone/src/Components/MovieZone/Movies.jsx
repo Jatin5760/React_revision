@@ -4,17 +4,21 @@ import { useState } from "react";
 
 const Movies = () => {
   const [movieList, setMovieList] = useState(movies);
+  //console.log(movieList); this variable contains the movie list data
+  
 
 
   const filterByCatergory = (cat) => {
         setMovieList(movies.filter((data)=> data.category == cat))
   }
+  console.log(filterByCatergory);
+  
 
   return (
     <>
       <div className="my-3" style={{ width: "1000px", margin: "auto" }}>
         <div className="mx-auto text-center">
-          <button onClick={()=>filterByCatergory('Action')} type="button" className="btn btn-primary mx-3">
+          <button onClick={()=>setMovieList(movies)} type="button" className="btn btn-primary mx-3">
             All
           </button>
           <button onClick={()=>filterByCatergory('Action')} type="button" className="btn btn-secondary mx-3">
