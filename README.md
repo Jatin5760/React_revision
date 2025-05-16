@@ -16,8 +16,8 @@ This repository contains my revision material for React.js. It includes examples
 ### Clone the repository
 
 ```bash
-git clone https://github.com/your-username/react-revision.git
-cd react-revision
+git clone https://github.com/Jatin5760/React_revision.git
+cd React_revision
 ````
 
 ### Install dependencies
