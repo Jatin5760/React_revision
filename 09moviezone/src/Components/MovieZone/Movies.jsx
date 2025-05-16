@@ -11,9 +11,8 @@ const Movies = () => {
   const filterByCatergory = (cat) => {
         setMovieList(movies.filter((data)=> data.category == cat))
   }
-  console.log(filterByCatergory);
+  //console.log(filterByCatergory);
   
-
   return (
     <>
       <div className="my-3" style={{ width: "1000px", margin: "auto" }}>
