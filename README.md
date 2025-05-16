@@ -1,13 +1,6 @@
-# React_Revision
-
-Got it — you want a clean, **no-fluff**, **to-the-point** `README.md` that you can directly drop into your GitHub repo. Here's a properly formatted version with just the essentials, no filler:
-
----
-
-````markdown
 # React Revision Repository
 
-This repository contains my revision material for React.js. It includes examples, practice components, and demos to reinforce key concepts of React.
+This repository contains my revision material for React.js. It includes examples, practice components, demos and some projects to reinforce key concepts of React.
 
 ## Features
 
