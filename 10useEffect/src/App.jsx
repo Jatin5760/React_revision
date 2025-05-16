@@ -1,28 +1,12 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import React from "react";
+//import UseEffect from "./Components/UseEffect";
+import Fetch_Data_Api from "./Components/Fetch_Data_Api";
 
 function App() {
-  // Use effect data fetching mai kaam ata hai iske bina data fetch nahi ho sakta
-  // Ek component ke change hone se dusre component par kya effect ata hai
-  // Ye ek baar chalta hai aur refresh hone par dobara chalta hai.
-  // Iske last mai ek [] dependency array hota hai isme koi bhi variable daal sakte hai aur jab wo variable update hoga use effect wapas chalega yani useeffect wapas render hoga.
-
-  const [counter, setCounter] = useState(10);
-
-  useEffect(() => {
-    document.title = counter;
-    console.log("Use effect is running");
-  }, [counter]);
-
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1>Learning use effect</h1>
-
-      <h1>{counter}</h1>
-      <button onClick={() => setCounter(counter + 1)}>Increase</button>
-      <button onClick={() => setCounter(counter - 1)}>Decrease</button>
+      {/* <UseEffect/> */}
+      <Fetch_Data_Api />
     </>
   );
 }
