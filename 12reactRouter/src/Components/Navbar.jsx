@@ -14,6 +14,7 @@ const Navbar = () => {
 
   const logout = () => {
     setisLoggedIn(false);
+    navigate('./logout')
   };
 
   return (
@@ -50,13 +51,13 @@ const Navbar = () => {
                 Contact
               </Link>
 
-              <Link
-              onClick={logout}
+              <button
+                onClick={logout}
                 className="items"
                 style={{ fontWeight: "bold", backgroundColor: "gray" }}
               >
                 Logout
-              </Link>
+              </button>
             </>
           )}
 
@@ -74,7 +75,7 @@ const Navbar = () => {
                 Contact
               </Link>
 
-              <Link
+              <button
                 onClick={login}
                 className="items"
                 style={{
@@ -84,7 +85,7 @@ const Navbar = () => {
                 }}
               >
                 Login
-              </Link>
+              </button>
             </>
           )}
         </div>
