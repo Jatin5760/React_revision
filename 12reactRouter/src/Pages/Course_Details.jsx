@@ -1,7 +1,9 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 
 const Course_Details = () => {
+  console.log(useLocation());
+
   const arr = [
     {
       id: "MERN001",
@@ -29,11 +31,14 @@ const Course_Details = () => {
     },
   ];
 
-  console.log(useParams());
+  //console.log(useParams());
   const { id } = useParams();
 
+  // Used for conditional rendering 
+  const location = useLocation();
+
   const course_detail = arr.filter((data) => data.id == id);
-  console.log(course_detail);
+  //console.log(course_detail);
 
   return (
     <>
@@ -42,8 +47,13 @@ const Course_Details = () => {
         <h3>Course Id = {id}</h3>
 
         <h2>Course Name = {course_detail[0].course_name} </h2>
-        <h2>Course Name = {course_detail[0].duration} </h2>
-        <h2>Course Name = {course_detail[0].price} </h2>
+
+        {location.pathname != "/courses/MERN001" && (
+          <>
+            <h2>Course Duration = {course_detail[0].duration} </h2>
+            <h2>Course Price = {course_detail[0].price} </h2>
+          </>
+        )}
 
         <button>
           <Link
