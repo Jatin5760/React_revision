@@ -8,7 +8,7 @@ import Team from './Pages/Team'
 import Course_Details from './Pages/Course_Details'
 import Navbar from './Components/Navbar'
 import Profile from './Pages/Profile'
-import Dashbaord from './Pages/Dashboard'
+import Dashboard from './Pages/Dashboard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +24,8 @@ function App() {
           <Route path='/team' element={<Team/>}></Route>
           <Route path='/courses' element={<Product/>}></Route>
           <Route path='/courses/:id' element={<Course_Details/>}></Route>
+          <Route path='/dashboard' element={<Dashboard/>}></Route>
+          <Route path='/profile' element={<Profile/>}></Route>
         </Routes>
       </Router>
     </>
