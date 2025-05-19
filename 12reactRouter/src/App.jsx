@@ -10,8 +10,10 @@ import Navbar from './Components/Navbar'
 import Profile from './Pages/Profile'
 import Dashboard from './Pages/Dashboard'
 import Logout from './Pages/Logout'
+import Indiangov from './Home/Indiangov'
 
 function App() {
+  const money = 10000;
   const [count, setCount] = useState(0)
 
   return (
@@ -19,7 +21,7 @@ function App() {
       <Router>
       <Navbar/>
         <Routes>
-          <Route path='/' element={<Home/>}></Route>
+          <Route path='/' element={<Indiangov money = {money}/>}></Route>
           <Route path='/about' element={<About/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
           <Route path='/team' element={<Team/>}></Route>
