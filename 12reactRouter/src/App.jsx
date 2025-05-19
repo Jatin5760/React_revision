@@ -6,7 +6,9 @@ import Contact from './Pages/Contact'
 import Product from './Pages/Product'
 import Team from './Pages/Team'
 import Course_Details from './Pages/Course_Details'
-
+import Navbar from './Components/Navbar'
+import Profile from './Pages/Profile'
+import Dashbaord from './Pages/Dashboard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +16,7 @@ function App() {
   return (
     <>
       <Router>
+      <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}></Route>
           <Route path='/about' element={<About/>}></Route>
