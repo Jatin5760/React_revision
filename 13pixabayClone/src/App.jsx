@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import Images from './Component/Images'
-
+import { useState } from "react";
+import Images from "./Component/Images";
+import "./index.css";
+import Navbar from "./Component/Navbar";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <Images/>
+      <Navbar />
+      <Images />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
