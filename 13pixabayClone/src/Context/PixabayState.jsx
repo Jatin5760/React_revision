@@ -3,19 +3,21 @@ import PixabayContext from "./PixabayContext";
 
 const PixabayState = (props) => {
   const [imageData, setImageData] = useState([]);
+  const [query, setQuery] = useState('london');
 
   const api_key = "50393482-19928b06db9ea7641826b49e6";
   useEffect(() => {
     const fetchData = async () => {
       const api = await fetch(
-        `https://pixabay.com/api/?key=${api_key}&q=london&image_type=photo&pretty=true&per_page=100`
+        `https://pixabay.com/api/?key=${api_key}&q=${query}&image_type=photo&pretty=true&per_page=100`
       );
+
       const data = await api.json();
       setImageData(data.hits);
       console.log(data.hits);
     };
     fetchData();
-  }, []);
+  }, [query]);
 
   const fetchImageByCategory = async (cat)=>{
 
@@ -30,7 +32,7 @@ const PixabayState = (props) => {
 
   return (
     <div>
-      <PixabayContext.Provider value={{ imageData, fetchImageByCategory}}>
+      <PixabayContext.Provider value={{ imageData, fetchImageByCategory, setQuery}}>
         {props.children}
       </PixabayContext.Provider>
     </div>
