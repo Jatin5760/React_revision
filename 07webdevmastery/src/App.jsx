@@ -9,7 +9,7 @@ import Person3 from "./Components/Person3";
 const App = () => {
 
   // Yahi par ham variable banayenge
-  
+
   return (
     // Mai return ke andar js ka code nahi likhunga, Mai sirf curly bracket ke andar hi likhunga
     // <></> isko kehte hai fragment, isse ham mulitple divs ko return kar sakte hai.
