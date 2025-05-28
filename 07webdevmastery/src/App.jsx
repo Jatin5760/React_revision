@@ -8,6 +8,14 @@ import Person3 from "./Components/Person3";
 
 const App = () => {
 
+
+  // const product = {
+  //   title: "iphone",
+  //   model: "iphone-15",
+  //   price: "65000",
+  //   brand: "Apple",
+  //   Ram: "8Gb"
+  // }
   // Yahi par ham variable banayenge
 
   return (
