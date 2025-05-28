@@ -12,10 +12,13 @@ const Laptop = ({ name, model, price }) => {
     border: "2px solid white",
   };
 
+  // Inline styling is not recommended for large projects
+  // because it makes the code less maintainable and harder to read
+
   return (
     <>
       <div
-      
+
         // Inline styling
         // style={{
         //   backgroundColor: "yellow",
