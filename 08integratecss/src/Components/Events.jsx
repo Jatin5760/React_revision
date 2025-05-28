@@ -17,7 +17,6 @@ const Events = () => {
       <button onMouseOver={handleClick}>Hover Me</button>
 
       {/* Yaha callback function use kara hamne because function parameterized tha */}
-
       <button onClick={() => additon(100)}>Calculate Me</button>
     </div>
   );
