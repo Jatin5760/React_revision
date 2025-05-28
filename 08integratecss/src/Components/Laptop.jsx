@@ -15,6 +15,7 @@ const Laptop = ({ name, model, price }) => {
   return (
     <>
       <div
+      
         // Inline styling
         // style={{
         //   backgroundColor: "yellow",
