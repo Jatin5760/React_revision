@@ -20,8 +20,8 @@ const Counter = () => {
 //   })
 
   const [counter, setCounter] = useState(100)
-
-
+  
+  // Ye counter variable state variable hai iski value change karne par UI mai change reflect hoga
   const increase1 = () => {
     //counter++;
     setCounter(counter + 1)
