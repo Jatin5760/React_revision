@@ -9,7 +9,7 @@ const Counter = () => {
 
   // Hooks predefined function hote hai Hooks ke through is normal variable ko ham state variable mai convert kardenge
   //let counter = 0;
-
+  
 
   // Ye useState hook hai iska shortcut hai "usess" is snipit se grenerate ho jayega code
 
