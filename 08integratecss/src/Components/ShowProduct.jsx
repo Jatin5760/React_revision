@@ -11,7 +11,9 @@ const ShowProduct = () => {
   return (
     <div>
       {products.map((data) => (
-        // Ye id pass karna compulosory hai, isse react track kar sakta hai konse element mai change hai
+        // Ye id pass karna compulosory hai, isse react track kar sakta hai konse element mai change hai.
+        
+        // Key should be unique for each element in the array.
         <div key={data.id}>
           <h1>Title = {data.title}</h1>
           <h2>Price = {data.price}</h2>
