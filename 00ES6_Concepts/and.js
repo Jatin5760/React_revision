@@ -29,6 +29,15 @@ console.log(name1+ " "+name2);
 console.log(`First name: ${name1} and Second name: ${name2}`);
 
 
+// Ternary Operator
+// Condition ? statement1 : statement2
+let showRecipeOne = false;
+function getRecipeOneName(recipeName){
+    return recipeName;
+}
+
+
+
 
 
 
