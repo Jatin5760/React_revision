@@ -127,7 +127,7 @@ function getInfo(a,b,...c) {
     console.log(a,b,c);
     return "Jatin Sharma";
 }
-console.log(getInfo(1,2,3,4,5));
+//console.log(getInfo(1,2,3,4,5));
 
 
 
@@ -143,7 +143,7 @@ const personArray = [
     {
         name: 'Person2',
         age: 23,
-        country:'India'
+        country:'Usa'
     },
     {
         name: 'Person3',
@@ -153,13 +153,18 @@ const personArray = [
 ]
 
 let getAllNames = personArray.map((Person,index)=>{
-    console.log(Person,index);
-    return Person.name
+    //console.log(Person,index);
+    return `Name is ${Person.name} age is ${Person.age}`
 })
+//console.log(getAllNames);
 
-console.log(getAllNames);
 
 
+//Find
+let getPersonFromUSA = personArray.find((Person, index)=>{
+    return Person.country === 'Usa';
+})
+//console.log(getPersonFromUSA); // Find always return the condition satified first, while filter will return all things satisfying the condition
 
 
 
