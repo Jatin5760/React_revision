@@ -171,6 +171,7 @@ let getPersonFromUSA = personArray.find((Person, index)=>{
 let getAllPersonFromUSA = personArray.filter((Person)=>{
     return Person.country === 'Usa'; 
 })
-console.log(getAllPersonFromUSA);
+//console.log(getAllPersonFromUSA);
+
 
 
