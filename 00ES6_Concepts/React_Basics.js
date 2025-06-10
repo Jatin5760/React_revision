@@ -179,14 +179,30 @@ let getAllPersonFromUSA = personArray.filter((Person)=>{
 let checkSomeArrayMethodWithExample = personArray.some((Person)=>{
     return Person.age === 46
 })
-console.log(checkSomeArrayMethodWithExample);
+//console.log(checkSomeArrayMethodWithExample);
 
 
 // Every: this will check if every of its objects conditon satisfy 
 let checkEveryArrayMethodWithExample = personArray.every((Person)=>{
     return Person.age>22;
 })
-console.log(checkEveryArrayMethodWithExample);
+//console.log(checkEveryArrayMethodWithExample);
+
+
+// Includes
+const fruitsArray = ['apple', 'banana', 'orange']
+//console.log(fruitsArray.includes('apple'));
+
+// Indexof
+//console.log(fruitsArray.indexOf('banana'));
+//console.log(fruitsArray.indexOf('Jatin')); // -1 doesn't exist
+
+
+// FindIndex
+let getIndexOfPersonWhoIsFromRussia = personArray.findIndex((Person)=>{
+    return Person.country === 'Russia'
+})
+console.log(getIndexOfPersonWhoIsFromRussia); // Got the index beased on the condition
 
 
 
