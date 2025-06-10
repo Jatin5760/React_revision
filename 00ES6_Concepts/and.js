@@ -18,3 +18,18 @@ console.log(c || getName("Jayant Sharma"));
 
 
 
+// Tempelate literals
+
+// This is the older version
+let name1 = 'John';
+let name2 = 'Doe';
+console.log(name1+ " "+name2);
+
+// New syntax
+console.log(`First name: ${name1} and Second name: ${name2}`);
+
+
+
+
+
+
