@@ -73,6 +73,26 @@ const product2 = {
     rating
 }
 
+// const getProductTwoDescription = product2.description;
+// console.log(getProductTwoDescription);
+
+// This is desctructuring 
+const {description} = product2
+console.log(description);
+
+
+
+
+
+const array = [1,2,3];
+let getArrayFirstValue = array[0]
+let getArraySecondValue = array[1]
+
+console.log(getArrayFirstValue, getArraySecondValue);
+
+
+
+const [FirstElement] = array
 
 
 
