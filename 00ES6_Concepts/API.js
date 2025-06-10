@@ -10,4 +10,4 @@ async function fetchListOfProducts() {
         
     }
 }
-fetchListOfProducts()
+fetchListOfProducts() 
