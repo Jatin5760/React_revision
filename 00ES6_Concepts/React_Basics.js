@@ -160,12 +160,17 @@ let getAllNames = personArray.map((Person,index)=>{
 
 
 
-//Find
+// Find
 let getPersonFromUSA = personArray.find((Person, index)=>{
     return Person.country === 'Usa';
 })
 //console.log(getPersonFromUSA); // Find always return the condition satified first, while filter will return all things satisfying the condition
 
 
+// Filter: Filter will return everything that is satisfying the conditon.
+let getAllPersonFromUSA = personArray.filter((Person)=>{
+    return Person.country === 'Usa'; 
+})
+console.log(getAllPersonFromUSA);
 
 
