@@ -175,3 +175,18 @@ let getAllPersonFromUSA = personArray.filter((Person)=>{
 
 
 
+// Some: this will return true or false based on the conditon for any element in the array
+let checkSomeArrayMethodWithExample = personArray.some((Person)=>{
+    return Person.age === 46
+})
+console.log(checkSomeArrayMethodWithExample);
+
+
+// Every: this will check if every of its objects conditon satisfy 
+let checkEveryArrayMethodWithExample = personArray.every((Person)=>{
+    return Person.age>22;
+})
+console.log(checkEveryArrayMethodWithExample);
+
+
+
