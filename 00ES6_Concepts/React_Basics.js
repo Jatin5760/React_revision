@@ -63,7 +63,7 @@ const product = {
     rating
 }
 
-console.log(product);
+//console.log(product);
 
 
 const product2 = {
@@ -78,7 +78,7 @@ const product2 = {
 
 // This is desctructuring 
 const {description} = product2
-console.log(description);
+//console.log(description);
 
 
 
@@ -99,6 +99,35 @@ const [
 ] = array
 //console.log(FirstElement, SecondElement, ThirdElement);
 
+
+
+// Default Prameters
+function mulofTwoNumbers(num1 = 1, num2 = 2){
+    console.log(num1,num2);
+    return num1*num2;
+}
+//console.log(mulofTwoNumbers(2,6)); // This will overite even if you use default parameters
+//console.log(mulofTwoNumbers()); // This will be taking the default value
+
+
+
+// Spread Operator
+
+const array2 = [2,3,4];
+const array3 = [10,11,12];
+
+console.log([999, ...array2, 1000, ...array3]);
+
+
+
+
+// Rest Parameters
+function getInfo(a,b,c,d,e) {
+    console.log(a,b,c,d,e);
+    
+    return "Jatin Sharma";
+}
+console.log(getInfo(1,2,3,4,5));
 
 
 
