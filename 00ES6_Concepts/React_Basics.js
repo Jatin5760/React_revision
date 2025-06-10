@@ -87,13 +87,20 @@ console.log(description);
 const array = [1,2,3];
 let getArrayFirstValue = array[0]
 let getArraySecondValue = array[1]
-console.log(getArrayFirstValue, getArraySecondValue);
+//console.log(getArrayFirstValue, getArraySecondValue);
 
 
 
 // Destructuring the Arrays
-const [FirstElement, SecondElement] = array
-console.log(FirstElement, SecondElement);
+const [
+    FirstElement, 
+    SecondElement,
+    ThirdElement
+] = array
+//console.log(FirstElement, SecondElement, ThirdElement);
+
+
+
 
 
 
