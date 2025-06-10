@@ -1,0 +1,5 @@
+There are two types of component 
+1) Class Components
+2) Functional Components
+
+The JSX is converted into plain Javascript using Babel as a preprocessor.
