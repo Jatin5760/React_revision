@@ -116,18 +116,48 @@ function mulofTwoNumbers(num1 = 1, num2 = 2){
 const array2 = [2,3,4];
 const array3 = [10,11,12];
 
-console.log([999, ...array2, 1000, ...array3]);
+//console.log([999, ...array2, 1000, ...array3]);
 
 
 
 
-// Rest Parameters
-function getInfo(a,b,c,d,e) {
-    console.log(a,b,c,d,e);
-    
+// Rest Parameters : if agruments are too much then we can use spread operators
+// The rest parameter should be at the last of the arguments
+function getInfo(a,b,...c) {
+    console.log(a,b,c);
     return "Jatin Sharma";
 }
 console.log(getInfo(1,2,3,4,5));
+
+
+
+
+// ES6 Arrays Methods
+// Map, filter, find, some, every, includes, indexof, findIndex
+const personArray = [
+    {
+        name: 'Person1',
+        age: 30,
+        country:'Usa'
+    },
+    {
+        name: 'Person2',
+        age: 23,
+        country:'India'
+    },
+    {
+        name: 'Person3',
+        age: 45,
+        country:'Russia'
+    }
+]
+
+let getAllNames = personArray.map((Person,index)=>{
+    console.log(Person,index);
+    return Person.name
+})
+
+console.log(getAllNames);
 
 
 
