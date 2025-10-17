@@ -1,6 +1,9 @@
-import array from 'app.js'
+import username from './app.js'
+import {arr} from './app.js'
 
-console.log(array);
+console.log(username);
+console.log(arr);
+
 
 
 // There are two types of exports

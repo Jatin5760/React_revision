@@ -1,4 +1,7 @@
 // export var a = 20;
 
-const arr = [10,20,30,40,50];
-export default arr;
+export const arr = [10,20,30,40,50];
+
+const user = "Jatin";
+
+export default user;
