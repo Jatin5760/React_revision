@@ -5,7 +5,7 @@ function Box(props) {
   return (
     <div className='box'>
         <h1>Jatin Sharma</h1>
-        <h2>Web Developer</h2>
+        <h2>{props.name}</h2>
     </div>
   )
 }

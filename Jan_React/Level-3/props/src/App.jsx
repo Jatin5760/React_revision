@@ -5,7 +5,7 @@ function App() {
   return (
     <>
      <Box/>
-     <Box/>
+     <Box name = "WebD"/>
     </>
   )
 }
