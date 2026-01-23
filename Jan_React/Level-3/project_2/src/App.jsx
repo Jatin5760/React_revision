@@ -11,7 +11,6 @@ function App() {
     <>
       <Nav/>
       <Hero/>
-      <Card/>
       <Footer/>
     </>
   )
