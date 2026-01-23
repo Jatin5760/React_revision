@@ -1,11 +1,10 @@
 import React from 'react'
-function Box(props) {
-    console.log(props);
+function Box({name= "Jatin Sharma", profession = "WebDev"}) {
     
   return (
     <div className='box'>
-        <h1>Jatin Sharma</h1>
-        <h2>{props.name}</h2>
+        <h1>{name}</h1>
+        <h2>{profession}</h2>
     </div>
   )
 }

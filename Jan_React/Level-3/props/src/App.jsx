@@ -4,8 +4,8 @@ import Box from "./components/Box"
 function App() {
   return (
     <>
-     <Box/>
-     <Box name = "WebD"/>
+     <Box name = "Jatin" profession = "App Dev"/>
+     <Box name = "Jayant"/>
     </>
   )
 }
