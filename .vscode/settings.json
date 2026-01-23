@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "*.ejs": "html",
+        "*.cpp ": "cpp",
+        "queue": "cpp",
+        "set": "cpp",
+        "algorithm": "cpp",
+        "iostream": "cpp",
+        "map": "cpp"
+    }
+}
