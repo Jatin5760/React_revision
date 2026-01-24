@@ -1,0 +1,3 @@
+- A route Group can be created by warpping a folder's name in the paranthesis: (folderName)
+
+- This convention indicates the folder is for organizational purposes and should not be included in the route's URL paranthesis
