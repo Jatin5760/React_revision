@@ -1,11 +1,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, team }) {
   return (
     <html lang="en">
-      <body>
-        {children}
+      <body className="w-screen h-screen flex">
+       <div className="w-[50%] bg-amber-950 text-white" >{children}</div>
+       <div className="w-[50%] bg-amber-300 text-black">{team}</div>
       </body>
     </html>
   );
