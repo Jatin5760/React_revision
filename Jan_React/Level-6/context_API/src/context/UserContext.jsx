@@ -1,10 +1,15 @@
 import React from 'react'
+import { createContext } from 'react'
 
-function UserContext() {
-    let username = "Jatin Sharma"
+export const data = createContext()
+function UserContext({children}) {
+    
+  let username = "Jatin Sharma"
   return (
     <div>
-        <h1>Hii i am user context</h1>
+        <data.Provider value={username}>
+            {children}
+        </data.Provider>
     </div>
   )
 }
