@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      
+      <h1>Hii i am app component</h1>
     </>
   )
 }
