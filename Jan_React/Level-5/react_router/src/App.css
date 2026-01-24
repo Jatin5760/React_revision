@@ -61,3 +61,13 @@ nav ul{
   font-size: 9vw;
   color: white;
 }
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+a.active{
+  color: rgb(201, 135, 13);
+  text-decoration: underline;
+}
