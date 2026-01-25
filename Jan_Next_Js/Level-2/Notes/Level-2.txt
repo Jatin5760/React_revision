@@ -1,3 +1,8 @@
 - A route Group can be created by warpping a folder's name in the paranthesis: (folderName)
 
 - This convention indicates the folder is for organizational purposes and should not be included in the route's URL paranthesis
+
+- In next Js every component is server component so if you want to use hooks (useState.. etc), you have to write
+'use client' at the top of the page.
+
+
