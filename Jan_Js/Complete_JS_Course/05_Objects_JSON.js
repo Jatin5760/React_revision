@@ -4,12 +4,30 @@
 ================================================================================
 
   THEORY:
-  1. OBJECTS: Key-value pairs. Keys are strings (or Symbols), values can be anything.
-  2. JSON (JavaScript Object Notation): Standard text format for data interchange.
-     - `JSON.stringify(obj)`: Object -> String.
-     - `JSON.parse(string)`: String -> Object.
-  3. DESTRUCTURING: Extracting values from objects/arrays into distinct variables.
-  4. SPREAD (`...`): Expanding an object/array into individual elements/props.
+  
+  1. OBJECTS: The core data structure. Unordered collection of Key-Value pairs.
+     - *Keys*: Are always Strings or Symbols. (e.g., `obj[1]` actually treats 1 as "1").
+     - *Values*: Can be anything (Primitives, Arrays, Functions, Other Objects).
+     - *Access*: Dot notation `obj.key` (cleaner) vs Bracket notation `obj["key"]` (dynamic, allows spaces/vars).
+
+  2. JSON (JavaScript Object Notation):
+     - The universal format for API data transfer.
+     - `JSON.stringify(obj)`: Converts JS Object -> JSON String.
+       *Warning*: It ignores functions and `undefined` values. It cannot handle circular references.
+     - `JSON.parse(string)`: Converts JSON String -> JS Object.
+       *Use Case*: Deep cloning objects (simple hack: `JSON.parse(JSON.stringify(obj))`).
+
+  3. DESTRUCTURING (ES6):
+     - Unpacking values from arrays or properties from objects into distinct variables.
+     - *Syntax*: `const { name, age } = user;`.
+     - *Renaming*: `const { name: userName } = user;`.
+     - *Defaults*: `const { role = "guest" } = user;` (Uses "guest" if role is undefined).
+
+  4. SPREAD OPERATOR (...) & COPYING:
+     - Merging: `const combined = { ...obj1, ...obj2 }` (Right-side props overwrite left-side duplicates).
+     - Cloning: `const copy = { ...original }`.
+     - *Critical Note*: This creates a SHALLOW COPY. Can copy primitive props, but nested objects are still shared references.
+       Modifying `copy.nested.x` WILL affect `original.nested.x`.
 
 */
 

@@ -4,13 +4,29 @@
 ================================================================================
 
   THEORY:
-  1. `this`: Context reference. Changes based on HOW function is called.
-  2. Call/Apply/Bind: Methods to manually set `this` context.
-     - `call(thisObj, arg1, arg2)`: Invokes immediately.
-     - `apply(thisObj, [argsArray])`: Invokes immediately (args in array).
-     - `bind(thisObj)`: Returns a NEW function with `this` permanently bound. 
-  3. IIFE (Immediately Invoked Function Expression): `(function(){ ... })();`. 
-     Used to create local scope and avoid global pollution.
+  
+  1. THE `this` KEYWORD:
+     - The most misunderstood concept. `this` refers to the *context* of where a function is CALLED, not where it's defined (unless arrow func).
+     - *In Method*: Object calling the method. (`obj.func()` -> `this` is `obj`).
+     - *In Global*: Window (or global in Node).
+     - *In Constructor*: The new instance being created.
+     - *In Arrow Func*: The parent scope's `this` (Lexical).
+
+  2. EXPLICIT BINDING (Controlling `this`):
+     - Sometimes `this` gets lost (e.g. inside a callback or event listener). We can manually fix it:
+     - `call(thisObj, arg1, arg2)`: Executes function IMMEDIATELY with specified `this`.
+     - `apply(thisObj, [array])`: Same as call, but arguments are passed as an array.
+     - `bind(thisObj)`: Does NOT execute immediately. Returns a NEW function copy with `this` permanently set.
+       *Use Case*: React Event Handlers, Partial Application.
+
+  3. IIFE (Immediately Invoked Function Expression):
+     - Syntax: `(function() { ... })();`
+     - Runs as soon as it is defined.
+     - *Why?* Before "Modules" (ES6), this was the only way to create a "private scope" so variables don't leak into current global scope.
+
+  4. CLOSURES (Deep Dive):
+     - A function combined with its "Lexical Environment".
+     - Analogy: A function carries a "backpack". Even if you export the function to a completely different file, it still has access to the variables present when it was created.
 
 */
 

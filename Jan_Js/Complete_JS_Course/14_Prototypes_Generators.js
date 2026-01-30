@@ -4,16 +4,22 @@
 ================================================================================
 
   THEORY:
-  1. PROTOTYPES: JavaScript is prototype-based, not class-based. 
-     Classes are just "syntactic sugar" over prototypes.
-     Every object has a `__proto__` property pointing to its parent.
+  
+  1. PROTOTYPES (Inheritance Model):
+     - Every JS Object has a hidden property `[[Prototype]]` (accessible via `__proto__`).
+     - *Chain*: If you access `dog.speak`, JS looks in `dog` object. If not found, it looks in `dog.__proto__`. If not found, looks in `dog.__proto__.__proto__`, until it hits `null`.
+     - *Class is Sugar*: `class Dog {}` essentially creates a function and assigns methods to `Dog.prototype`.
 
-  2. GENERATORS (`function*`): Functions that can pause (`yield`) and resume.
-     Returns an iterator object with `.next()`.
-     Used in Redux-Saga or complex async flows.
+  2. GENERATORS (`function*`):
+     - Functions that can be PAUSED and RESUMED.
+     - *Execution*: Calling a generator doesn't run code; it returns an "Iterator" object.
+     - *Yield*: `yield value` pauses function and returns value. Calling `.next()` resumes execution until next yield.
+     - *Use Case*: Async flows (Redux-Saga), generating infinite sequences without crashing memory.
 
-  3. PROXY: Object that wraps another object to intercept operations 
-     (reading, writing, deleting properties).
+  3. PROXY (Meta-programming):
+     - Wraps an object to *intercept* fundamental operations (read, write, delete, function call).
+     - *Handler*: Object defining "traps" (methods like `get`, `set`).
+     - *Magical*: Can be used for validation, logging, data binding (Vue 3 Reactivity), or creating "impossible" APIs.
 
 */
 

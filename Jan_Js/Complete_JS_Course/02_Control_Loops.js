@@ -5,18 +5,23 @@
 
   THEORY:
   
-  1. CONDITIONALS:
-     - `if (condition) { ... } else { ... }`
-     - `switch`: Useful for checking a variable against multiple distinct values.
-     - Ternary Operator: `condition ? trueValue : falseValue`. Concise for assignments.
-     - Nullish Coalescing (`??`): Returns right-hand side ONLY if left is `null` or `undefined` (unlike `||` which checks falsy).
+  1. CONDITIONALS (Decision Making):
+     - `if (condition) { ... } else { ... }`: The building block of logic. Runs code block only if condition is true.
+     - `switch(value) { case x: ... break; }`: Cleaner alternative to many if-else if statements when checking the SAME variable against specific values (discrete checking). Uses strict equality (===) internally.
+     - Ternary Operator (`cond ? trueVal : falseVal`): Inline if-else. Great for assigning values based on condition.
+     - Nullish Coalescing (`??`): Returns the right-side value strictly if the left-side is `null` or `undefined`.
+       *Difference from `||`*: `||` falls back on ANY falsy value (0, "", false). `??` falls back ONLY on null/undefined.
 
-  2. LOOPS:
-     - `for`: Standard loop with initializer, condition, iterator.
-     - `while`: Runs key logic as long as condition is true.
-     - `do...while`: Runs at least once, then checks condition.
-     - `for...of`: Modern loop for Iterables (Arrays, Strings, Maps). Direct access to values.
-     - `for...in`: Loops over *Enumerable Properties* (Keys) of an Object (or indices of array).
+  2. LOOPS (Repetition):
+     - `for (init; condition; step) { ... }`: The classic loop. You control the start, stop, and step counting manually.
+     - `while (condition) { ... }`: Loop that runs AS LONG AS condition is true. Good when number of iterations is unknown.
+     - `do { ... } while (condition)`: Similar to while, but guarantees code runs AT LEAST ONCE before checking condition.
+     - `for (const item of array)`: Modern, readable loop for "Iterables" (Arrays, Strings, NodeLists). You get the *Value* directly.
+     - `for (const key in object)`: Loop specific for Objects. You get the *Key* (property name). *Note: Using this on arrays gives index strings, not values (usually avoided for arrays).*
+     
+  3. LOOP CONTROL:
+     - `break`: Immediately terminates the loop and moves to code after it.
+     - `continue`: Skips the *current* iteration and jumps to the next one.
 
 */
 

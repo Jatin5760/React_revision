@@ -34,19 +34,24 @@
         ====================================================================
         
         THEORY:
-        1. LocalStorage: Stores data with no expiration date. (5-10MB limit).
-           - setItem(key, value)
-           - getItem(key)
-           - removeItem(key)
-           - clear()
-           Note: Stores STRINGS only. Use JSON.stringify/parse for objects.
+        1. LOCAL STORAGE:
+           - *Persistence*: Data stays until explicitly deleted (even after browser restart).
+           - *Capacity*: ~5-10MB (varies by browser).
+           - *Scope*: Domain specific (google.com cant read yahoo.com storage).
+           - *Format*: STRINGS only. You must `JSON.stringify` objects before saving.
         
-        2. SessionStorage: Stores data for one session (lost when tab closed).
+        2. SESSION STORAGE:
+           - *Persistence*: Data survives page reloads but DIES when tab/window is closed.
+           - *Use Case*: Form data, temporary ephemeral state.
         
-        3. Debugging:
-           - console.table(array): Pretty print.
-           - console.time('label') / console.timeEnd('label'): Performance check.
-           - debugger: Pauses code execution in DevTools.
+        3. COOKIES (Old School):
+           - Only 4KB. Sent to server with EVERY request (affects bandwidth).
+           - Used for Authentication (HttpOnly, Secure flags).
+        
+        4. DEBUGGING TRICKS:
+           - `console.table()`: Displays arrays/objects in a readable grid.
+           - `console.time('label')` ... `console.timeEnd('label')`: Measures execution time.
+           - `debugger;` keyword: Hardcoded breakpoint. Browser DevTools pauses execution right there.
 
         */
 

@@ -4,15 +4,30 @@
 ================================================================================
 
   THEORY:
-  1. SYNCHRONOUS: Code runs line by line. If one line takes 10s, everything waits.
-  2. ASYNCHRONOUS: Code (like API calls, timers) runs in background, non-blocking.
   
-  3. EVOLUTION:
-     - Callbacks: Old way. Prone to "Callback Hell" (nested indentation).
-     - Promises: Object representing future success/failure. (.then, .catch).
-     - Async/Await: Syntactic sugar over Promises. Looks synchronous but is async.
+  1. THE PROBLEM (Synchronous Blocking):
+     - JS is "Single Threaded". It has one Call Stack.
+     - If you run a slow task (like a 5-sec loop or big file read), the UI *freezes*.
+     - *Solution*: Asynchronous callbacks (Web APIs) handle tasks in background, then push result to queue.
 
-  4. KEY PROMISE STATES: Pending, Fulfilled (Resolved), Rejected.
+  2. PROMISES (The Better Callback):
+     - An object representing the eventual completion (or failure) of an async operation.
+     - *3 States*:
+       1. **Pending**: Initial state, neither fulfilled nor rejected.
+       2. **Fulfilled (Resolved)**: Operation completed successfully. (Value is passed to `.then`).
+       3. **Rejected**: Operation failed. (Error is passed to `.catch`).
+     - *Immutability*: Once settled (resolved/rejected), state cannot change.
+
+  3. ASYNC / AWAIT (ES8):
+     - Syntactic sugar built ON TOP of Promises.
+     - `async` function: Always returns a Promise automatically.
+     - `await`: Pauses execution of the function (non-blocking for outside code) until the Promise resolves.
+     - *Error Handling*: Since we don't have `.catch()`, we MUST wrap await calls in `try { ... } catch (err) { ... }` blocks.
+
+  4. FETCH API:
+     - Modern replacement for XMLHttpRequest (AJAX).
+     - Returns a Promise that resolves to the *Response* object (headers, status).
+     - You must call a method like `.json()` or `.text()` (which also returns a Promise) to get the actual body data.
 
 */
 

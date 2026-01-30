@@ -4,17 +4,38 @@
 ================================================================================
 
   THEORY:
-  Arrays are ordered collections of items. In JS, they can hold mixed types and are dynamic (autoresize).
-  They are Objects under the hood, with integer keys.
+  Arrays are dynamic lists that can hold any data type. They are crucial because most frontend data (like lists of products/users) comes as Arrays.
 
-  KEY METHODS CHEATSHEET:
-  - Add/Remove End: `push(val)`, `pop()`
-  - Add/Remove Start: `unshift(val)`, `shift()`
-  - Subarray: `slice(start, end)` (Copy), `splice(start, count, insert)` (Mutate)
-  - Search: `indexOf(val)`, `includes(val)`, `find(cb)`, `findIndex(cb)`
-  - Transform: `map(cb)`, `filter(cb)`, `reduce(cb, init)`
-  - Order: `sort(cb)`, `reverse()`
-  - String: `join(separator)`
+  KEY METHODS CHEATSHEET & BEHAVIOR:
+  
+  1. ADD/REMOVE (Modifies Original Array):
+     - `push(val)`: Adds to END. Returns new length.
+     - `pop()`: Removes from END. Returns removed item.
+     - `unshift(val)`: Adds to START. Returns new length. (Slower than push, reindexes all).
+     - `shift()`: Removes from START. Returns removed item.
+
+  2. SLICE vs SPLICE (Interview Favorite):
+     - `slice(start, end)`: Pure function. Returns a COPY of a section. END index is excluded. Does NOT change original array.
+     - `splice(start, count, insert)`: Impure function. MUTATES original array. Removes items and/or adds new ones at specific index.
+
+  3. ITERATION & TRANSFORMATION (The Big Three):
+     - `map(callback)`: Transforms EACH item. Returns a NEW array of same length. 
+       *Use when:* You want to convert data (e.g., Object -> String, or Price -> Discounted Price).
+     - `filter(callback)`: Checks condition for EACH item. Returns a NEW array with ONLY items that pass (return true).
+       *Use when:* You want to remove items (e.g., Delete a todo, remove out-of-stock items).
+     - `reduce(callback, initialVal)`: Accumulates all items into a SINGLE value (number, object, or another array).
+       *Use when:* Summing totals, grouping data, or flattening lists.
+
+  4. SEARCHING:
+     - `find(callback)`: Returns the FIRST item object that matches condition (or undefined).
+     - `findIndex(callback)`: Returns INDEX of first match (or -1).
+     - `includes(val)`: Returns true/false (Simple equality check).
+     - `indexOf(val)`: Returns index (or -1).
+
+  5. SORTING:
+     - `sort()`: Sorts IN PLACE. By default, converts to strings (so 100 comes before 2).
+       *Fix:* Always provide compare function `(a,b) => a - b` for numbers.
+     - `reverse()`: Reverses IN PLACE.
 
 */
 

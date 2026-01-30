@@ -50,18 +50,22 @@
         ====================================================================
         THEORY:
         1. QUERY SELECTOR: 
-           - document.getElementById('id')
-           - document.querySelector('.class') (First match)
-           - document.querySelectorAll('.class') (All matches - NodeList)
+           - `document.querySelector('.class')`: Returns the FIRST matching element.
+           - `document.querySelectorAll('.class')`: Returns a **NodeList** (Array-like) of ALL matches. 
+             *Note*: Static Collection (doesn't update if DOM changes).
+           - `getElementById`: Faster, returns specific element.
+           - `getElementsByClassName`: Returns **HTMLCollection** (Live Collection, updates automatically).
         
         2. MODIFICATION:
-           - element.textContent = "New Text"
-           - element.innerHTML = "<span>HTML</span>"
-           - element.style.color = "red"
-           - element.classList.add('className')
+           - `.textContent`: Safest. Sets raw text. Ignores HTML tags.
+           - `.innerHTML`: Parses HTML tags. *Risk*: XSS (Cross Site Scripting) if user input is inserted directly.
+           - `.style.property`: Inline styles (e.g., `elem.style.marginTop = '10px'`).
+           - `.classList`: `.add()`, `.remove()`, `.toggle()` (Better than manipulating `className` string).
         
         3. EVENTS:
-           - element.addEventListener('click', callback)
+           - `.addEventListener('type', callback)`: The standard way. Allows multiple listeners on same event.
+           - `elem.onclick = func`: OLD way. Only one listener allowed (overwrites previous).
+           - *Callback*: Receives an `event` object (`e`) containing details like coordinates, key pressed, target element.
         */
 
         // ==========================================

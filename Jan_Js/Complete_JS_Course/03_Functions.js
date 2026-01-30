@@ -5,26 +5,34 @@
 
   THEORY:
   
-  1. FUNCTION TYPES:
-     - Declaration: `function name() {}`. Hoisted (can use before definition).
-     - Expression: `const name = function() {}`. Not hoisted.
-     - Arrow Function: `const name = () => {}`. Concise syntax. 
-       **Crucial Difference**: Arrow functions do NOT have their own `this`. They inherit it from parent scope.
+  1. FUNCTION DECLARATIONS VS EXPRESSIONS:
+     - Function Declaration (`function abc(){}`): Defines a named function.
+       *Key Feature*: HOISTED. You can call `abc()` BEFORE lines where it is defined in the code.
+     - Function Expression (`const abc = function(){}`): Assigns anonymous function to variable.
+       *Key Feature*: NOT HOISTED. Must be defined before calling. Useful for passing functions as data.
+     
+  2. ARROW FUNCTIONS (`() => {}`):
+     - Introduced in ES6. Shorter syntax.
+     - *Implicit Return*: If one-liner `x => x * 2`, no need for `{}` or `return` keyword.
+     - *Lexical `this`*: The biggest difference. Arrow functions DO NOT have their own `this`. 
+       They inherit `this` from the parent scope (where they were defined). 
+       This solves many issues in callbacks where `this` would unexpectedly become `window` or `undefined`.
 
-  2. PARAMETERS:
-     - Default Params: `function(a = 10)`.
-     - Rest Parameter: `function(...args)`. Collects all arguments into an array.
+  3. PARAMETERS:
+     - Default Parameters (`func(a=1)`): If argument is missing/undefined, uses default value.
+     - Rest Parameter (`func(...args)`): Collects "the rest" of the arguments into a single *Array*.
+       Allows handling infinite or variable number of arguments.
 
-  3. SCOPE:
-     - Global Scope: Accessible everywhere.
-     - Function Scope: Accessible only inside function (var).
-     - Block Scope: Accessible only inside {} (let, const).
+  4. SCOPE (Visibility of Variables):
+     - Global: Variables declared outside any function. Accessible everywhere. Bad practice to overuse.
+     - Function Scope: Variables declared with `var` inside a function are locked to that function.
+     - Block Scope: Variables declared with `let` or `const` inside `{}` (if, for, etc) are locked to that block.
+     - *Lexical Environment*: A function has access to its own variables + variables in its parent's scope.
 
-  4. HOISTING:
-     - Moving declarations to top of scope during compilation.
-     - `var` is hoisted and initialized as `undefined`.
-     - `let` and `const` are hoisted but are in a "Temporal Dead Zone" (cannot access before declaration).
-     - Function Declarations are fully hoisted.
+  5. CLOSURE:
+     - When a function returns another function, the inner function "remembers" the variables from the outer function's scope
+       even after the outer function has finished executing.
+     - Used for: Data hiding (private variables), Function factories (currying).
 
 */
 

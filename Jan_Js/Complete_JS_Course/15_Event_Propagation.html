@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Propagation & Delegation</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .box { padding: 20px; border: 2px solid #333; margin: 10px; border-radius: 8px; cursor: pointer; }
+        .red { background-color: #ffcccc; border-color: red; }
+        .blue { background-color: #ccefff; border-color: blue; }
+        .green { background-color: #ccffcc; border-color: green; }
+        
+        #list-items li { padding: 5px; margin: 5px; background: #eee; cursor: pointer; }
+        #list-items li:hover { background: #ddd; }
+    </style>
+</head>
+<body>
+
+    <h1>Event Propagation (Bubbling) & Delegation</h1>
+
+    <!-- 1. BUBBLING DEMO -->
+    <h3>1. Event Bubbling (Click inner box)</h3>
+    <div id="grandparent" class="box red">
+        Grandparent
+        <div id="parent" class="box blue">
+            Parent
+            <div id="child" class="box green">
+                Child (Click Me)
+            </div>
+        </div>
+    </div>
+    
+    <button id="btn-stop">Toggle: Stop Propagation is OFF</button>
+    <div id="log" style="border:1px solid #ccc; padding:10px; margin-top:10px; height: 100px; overflow:auto; background:#f9f9f9;">Log...</div>
+
+
+    <!-- 2. DELEGATION DEMO -->
+    <h3>2. Event Delegation (Dynamic List)</h3>
+    <p>Clicking any item works, even new ones added later!</p>
+    <ul id="list-items">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button id="btn-add">Add New Item</button>
+
+
+    <script>
+        /*
+        ====================================================================
+          EVENT PROPAGATION & DELEGATION
+        ====================================================================
+        
+        THEORY:
+        1. BUBBLING (Bottom -> Up):
+           - Default behavior. Event starts at target (button) and bubbles up to parents (div -> body -> html).
+           - *Why?* Allows parents to know what happened inside them.
+        
+        2. CAPTURING (Top -> Down):
+           - Reverse of bubbling. Travels from Window -> Target.
+           - rarely used, but enabled via `{ capture: true }` in addEventListener.
+        
+        3. DELEGATION (Performance Pattern):
+           - Instead of 100 listeners on 100 `<li>` elements, put 1 listener on `<ul>`.
+           - Use `e.target` to identify which specific child was clicked.
+           - *Benefit*: Saves memory. Handles dynamically added elements automatically.
+           
+        4. STOP PROPAGATION:
+           - `e.stopPropagation()`: Kills the bubble. Parents often won't know the event happened.
+           - *Warning*: Overuse makes debugging hard (why didn't my menu close when I clicked outside?).
+        */
+
+        const logDiv = document.getElementById('log');
+        function log(msg) {
+            logDiv.innerHTML += `<div>${msg}</div>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        // ==========================================
+        // EXERCISES
+        // ==========================================
+
+        console.log("--- 15 EVENT PROPAGATION ---");
+
+        // ------------------------------------------
+        // 1. BUBBLING & STOP PROPAGATION
+        // ------------------------------------------
+        const gp = document.getElementById('grandparent');
+        const p = document.getElementById('parent');
+        const c = document.getElementById('child');
+        let stopProp = false;
+
+        document.getElementById('btn-stop').addEventListener('click', function() {
+            stopProp = !stopProp;
+            this.textContent = `Toggle: Stop Propagation is ${stopProp ? 'ON' : 'OFF'}`;
+        });
+
+        // TODO: Observe the order of logs when you click the Child
+        gp.addEventListener('click', (e) => log("Grandparent Clicked!"));
+        
+        p.addEventListener('click', (e) => {
+            log("Parent Clicked!");
+            if(stopProp) {
+                // YOUR EXERCISE: Uncomment the line below to stop bubbling
+                e.stopPropagation(); 
+                log("(Propagation Stopped at Parent)");
+            }
+        });
+
+        c.addEventListener('click', (e) => log("Child Clicked!"));
+
+
+        // ------------------------------------------
+        // 2. EVENT DELEGATION (Crucial Pattern)
+        // ------------------------------------------
+        const list = document.getElementById('list-items');
+        const addBtn = document.getElementById('btn-add');
+
+        // BAD WAY: Adding listener to each LI (User has to add listener manually for new items).
+        // GOOD WAY: Delegation on UL.
+
+        // TODO: Add 'click' listener to the Parent (UL)
+        list.addEventListener('click', (e) => {
+            // Check if the clicked element (e.target) is an LI
+            // Note: tagName is usually uppercase in HTML
+            // YOUR CODE HERE: if e.target is 'LI', log its textContent
+            
+            if (e.target.tagName === 'LI') {
+                log(`Selected: ${e.target.textContent}`);
+                e.target.style.background = '#b3d9ff'; // Highlight
+            }
+        });
+
+        // Add new items dynamically to prove delegation works
+        addBtn.addEventListener('click', () => {
+             const newLi = document.createElement('li');
+             newLi.textContent = `Item ${list.children.length + 1} (New)`;
+             list.appendChild(newLi);
+        });
+
+    </script>
+</body>
+</html>

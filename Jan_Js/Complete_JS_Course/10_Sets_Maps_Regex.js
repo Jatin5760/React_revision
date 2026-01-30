@@ -4,21 +4,32 @@
 ================================================================================
 
   THEORY:
-  1. SET: Collection of UNIQUE values.
-     - `new Set([iterable])`
-     - `.add(val)`, `.delete(val)`, `.has(val)`, `.size`.
-     - Use Case: Removing duplicates from arrays.
+  
+  1. SET (Unique Collection):
+     - An Array-like structure that enforces UNIQUENESS.
+     - `new Set([1, 1, 2])` -> Stores `{1, 2}`.
+     - *Methods*: `.add(val)`, `.delete(val)`, `.has(val)`, `.clear()`.
+     - *Use Case*: Fastest way to deduplicate an array (`[...new Set(array)]`).
+     - *WeakSet*: Holds "weak" references to objects (garbage collection friendly), no iteration.
 
-  2. MAP: Collection of Key-Value pairs (Keys can be ANY type, not just strings).
-     - `new Map()`
-     - `.set(key, val)`, `.get(key)`, `.has(key)`, `.size`.
-     - Maintains insertion order.
+  2. MAP (Better Object):
+     - Key-Value pairs where Keys can be ANY type (Object, Function, Number), unlike Objects where keys are forced Strings.
+     - *Pros vs Object*:
+       1. Preserves insertion order (Objects usually do, but not guaranteed historically).
+       2. Has `.size` property (Object needs `Object.keys(obj).length`).
+       3. Better performance for frequent additions/removals.
+     - *Methods*: `.set(key, val)`, `.get(key)`, `.has(key)`, `.delete(key)`.
 
-  3. REGEX (Regular Expressions): Patterns to match character combinations.
-     - `/pattern/flags`
-     - `.test(string)`: Returns true/false.
-     - `.match(regex)`: Returns array of matches.
-     - Common patterns: `\d` (digit), `\w` (word char), `^` (start), `$` (end).
+  3. REGEX (Regular Expressions):
+     - Patterns used to match character combinations in strings.
+     - *Syntax*: `/pattern/flags`.
+     - *Flags*:
+       - `g`: Global (find all matches, not just first).
+       - `i`: Case Insensitive.
+       - `m`: Multiline.
+     - *Methods*:
+       - `regex.test(str)`: Returns Boolean (True/False).
+       - `str.match(regex)`: Returns Array of matches.
 
 */
 
