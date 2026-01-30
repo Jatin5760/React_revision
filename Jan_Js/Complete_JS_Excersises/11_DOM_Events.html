@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Mastery</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: 0 auto; }
+        .box { padding: 20px; border: 2px solid #333; margin: 10px 0; border-radius: 8px; }
+        .highlight { background-color: yellow; color: red; font-weight: bold; }
+        #log { background: #f0f0f0; padding: 10px; border-left: 4px solid #007bff; }
+    </style>
+</head>
+<body>
+
+    <h1>DOM & Events Playground</h1>
+    <p>Open this file in your browser to practice DOM manipulation.</p>
+
+    <!-- SECTION 1: SELECTION -->
+    <div id="target-id" class="box">
+        I am a div with ID "target-id".
+    </div>
+    
+    <div class="target-class box">I am class box 1</div>
+    <div class="target-class box">I am class box 2</div>
+
+    <!-- SECTION 2: MODIFICATION -->
+    <h2 id="heading-to-change">Change My Text!</h2>
+    <button id="btn-change">Change Text</button>
+
+    <!-- SECTION 3: CREATION -->
+    <div id="list-container">
+        <h3>My List</h3>
+        <ul id="my-list">
+            <li>Item 1</li>
+        </ul>
+        <button id="btn-add">Add Item</button>
+    </div>
+
+    <!-- SECTION 4: EVENTS -->
+    <div id="input-area" class="box">
+        <input type="text" id="username" placeholder="Type name here...">
+        <p>You typed: <span id="display-name"></span></p>
+    </div>
+
+    <script>
+        /*
+        ====================================================================
+          DOM MANIPULATION EXERCISES
+        ====================================================================
+        THEORY:
+        1. QUERY SELECTOR: 
+           - document.getElementById('id')
+           - document.querySelector('.class') (First match)
+           - document.querySelectorAll('.class') (All matches - NodeList)
+        
+        2. MODIFICATION:
+           - element.textContent = "New Text"
+           - element.innerHTML = "<span>HTML</span>"
+           - element.style.color = "red"
+           - element.classList.add('className')
+        
+        3. EVENTS:
+           - element.addEventListener('click', callback)
+        */
+
+        // ==========================================
+        // EXERCISES (Write your code below)
+        // ==========================================
+
+        console.log("--- DOM EXERCISES STARTED ---");
+
+        // ------------------------------------------
+        // 1. SELECTORS
+        // ------------------------------------------
+        // TODO: Select the element with id "target-id" and log it.
+        // YOUR CODE HERE:
+        
+
+
+        // TODO: Select ALL elements with class "target-class" and log the count/length.
+        // YOUR CODE HERE:
+
+
+
+        // ------------------------------------------
+        // 2. MANIPULATION & EVENTS
+        // ------------------------------------------
+        // TODO:
+        // 1. Select the button with id "btn-change".
+        // 2. Add a 'click' event listener.
+        // 3. Inside, select "heading-to-change" and change its .textContent to "Hello World!".
+        // 4. Also toggle the class "highlight" on the heading (element.classList.toggle('highlight')).
+        
+        // YOUR CODE HERE:
+
+
+
+
+        // ------------------------------------------
+        // 3. CREATING ELEMENTS
+        // ------------------------------------------
+        // TODO:
+        // 1. Select "btn-add".
+        // 2. On click, create a new <li> element: `document.createElement('li')`.
+        // 3. Set its text content to "New Item".
+        // 4. Append it to the "my-list" UL: `ul.appendChild(li)`.
+        
+        // YOUR CODE HERE:
+
+
+
+
+        // ------------------------------------------
+        // 4. INPUT EVENTS
+        // ------------------------------------------
+        // TODO:
+        // 1. Select the input "username".
+        // 2. Add an 'input' event listener (triggers on every keystroke).
+        // 3. Update the "display-name" span with the input's current value (e.target.value).
+        
+        // YOUR CODE HERE:
+
+
+    </script>
+</body>
+</html>

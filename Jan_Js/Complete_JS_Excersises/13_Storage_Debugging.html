@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Storage & Debugging</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .box { padding: 15px; border: 1px solid #ccc; margin-bottom: 20px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Browser Storage & Debugging</h1>
+
+    <!-- STORAGE EXERCISE -->
+    <div class="box">
+        <h3>LocalStorage (Persistent)</h3>
+        <input type="text" id="pref-input" placeholder="Enter theme (dark/light)">
+        <button id="save-btn">Save Preference</button>
+        <button id="clear-btn">Clear</button>
+        <p>Current Value: <span id="display-pref"></span></p>
+    </div>
+
+    <!-- SESSION EXERCISE -->
+    <div class="box">
+        <h3>SessionStorage (Tab Session)</h3>
+        <p>Reload the page to see if LocalStorage persists vs SessionStorage.</p>
+        <button id="session-btn">Save Session Timestamp</button>
+    </div>
+
+    <script>
+        /*
+        ====================================================================
+          STORAGE & DEBUGGING MASTERCLASS
+        ====================================================================
+        
+        THEORY:
+        1. LocalStorage: Stores data with no expiration date. (5-10MB limit).
+           - setItem(key, value)
+           - getItem(key)
+           - removeItem(key)
+           - clear()
+           Note: Stores STRINGS only. Use JSON.stringify/parse for objects.
+        
+        2. SessionStorage: Stores data for one session (lost when tab closed).
+        
+        3. Debugging:
+           - console.table(array): Pretty print.
+           - console.time('label') / console.timeEnd('label'): Performance check.
+           - debugger: Pauses code execution in DevTools.
+
+        */
+
+        console.log("--- STORAGE EXERCISES ---");
+
+        // ------------------------------------------
+        // 1. LOCAL STORAGE
+        // ------------------------------------------
+        const input = document.getElementById('pref-input');
+        const display = document.getElementById('display-pref');
+        
+        // TODO: Function to load saved preference from localStorage
+        function loadPref() {
+            // YOUR CODE HERE: Get 'userTheme' from localStorage
+            const savedTheme = localStorage.getItem('userTheme');
+            if (savedTheme) {
+                display.textContent = savedTheme;
+                input.value = savedTheme;
+            } else {
+                display.textContent = "None";
+            }
+        }
+
+        // TODO: Save on button click
+        document.getElementById('save-btn').addEventListener('click', () => {
+            const val = input.value;
+            // YOUR CODE HERE: Save 'userTheme' to localStorage
+            localStorage.setItem('userTheme', val);
+            loadPref();
+        });
+
+        // TODO: Clear on button click
+        document.getElementById('clear-btn').addEventListener('click', () => {
+            // YOUR CODE HERE: Remove 'userTheme'
+            localStorage.removeItem('userTheme');
+            loadPref();
+        });
+
+        // Load initially
+        loadPref();
+
+
+        // ------------------------------------------
+        // 2. DEBUGGING TRICKS
+        // ------------------------------------------
+        const users = [
+            { id: 1, name: "Alice", role: "Admin" },
+            { id: 2, name: "Bob", role: "User" },
+            { id: 3, name: "Charlie", role: "Manager" }
+        ];
+
+        // TODO: Use console.table() to print the users array nicely
+        // YOUR CODE HERE:
+        
+        
+
+        // TODO: Use console.time() to measure how long a loop takes
+        console.time("LoopTime");
+        for(let i=0; i<100000; i++) {} // simulated work
+        // YOUR CODE HERE: End the timer
+        console.timeEnd("LoopTime");
+
+    </script>
+</body>
+</html>
