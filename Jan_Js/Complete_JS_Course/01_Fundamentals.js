@@ -9,7 +9,10 @@
      - `var`: The old way (pre-ES6). It is "Function Scoped" (available within whole function even if declared in an if-block).
        It is "Hoisted" (moved to top) and initialized as `undefined`. This often causes bugs.
      - `let`: The modern way. "Block Scoped" (only exists inside the {} it was created in). 
-       It is hoisted but stays in a "Temporal Dead Zone" until execution reaches the line. Can be reassigned.
+       It is hoisted but stays in a "Temporal Dead Zone" (TDZ). 
+       *TDZ Explained*: The period from the start of the block until the variable is defined. Accessing it early throws a `ReferenceError`.
+       Can be reassigned.
+
      - `const`: Also "Block Scoped". Must be initialized immediately. Cannot be reassigned. 
        Note: If `const` holds an object/array, the *contents* can typically still be changed (mutation), but the *variables reference* cannot.
   
@@ -22,6 +25,7 @@
        5. Undefined (Variable declared but not assigned)
        6. Symbol (Unique identifier)
        7. BigInt (Large integers > 2^53 - 1)
+
      - Reference Types (Stored by Reference in Heap):
        1. Object ({ key: value })
        2. Array ([1, 2, 3])
@@ -69,6 +73,11 @@ console.log("--- 01 FUNDAMENTALS EXERCISES ---");
 */
 
 // YOUR CODE HERE:
+const userId = 101
+let userEmail = "test@test.com"
+// userId = 102
+userEmail = "admin@test.com"
+console.log(`My userId is ${userId} and userEmail is ${userEmail}`);
 
 
 
@@ -83,6 +92,14 @@ console.log("--- 01 FUNDAMENTALS EXERCISES ---");
 */
 
 // YOUR CODE HERE:
+let a = 20;
+let b = null;
+let c = 'ayush';
+let d = Symbol("my name is jatin sharma");
+let e = true;
+let f = BigInt('576');
+let g = undefined;
+
 
 
 
