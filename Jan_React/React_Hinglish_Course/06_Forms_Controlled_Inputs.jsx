@@ -1,17 +1,16 @@
-# 06. Forms & Controlled Components
+// # 06. Forms & Controlled Components
 
-HTML mein form elements (input, textarea, select) apni state khud maintain karte hain. React mein hum chahte hain ki **React State** hi boss bane.
+// HTML mein form elements (input, textarea, select) apni state khud maintain karte hain. React mein hum chahte hain ki **React State** hi boss bane.
 
----
+// ---
 
-## 🎮 1. Controlled Components
-Iska matlab hai input field ki value **sirf aur sirf** React State se control hogi.
-- Input dikhayega wahi jo State mein hai (`value={state}`).
-- Jab user type karega, hum State update karenge (`onChange`).
+// ## 🎮 1. Controlled Components
+// Iska matlab hai input field ki value **sirf aur sirf** React State se control hogi.
+// - Input dikhayega wahi jo State mein hai (`value={state}`).
+// - Jab user type karega, hum State update karenge (`onChange`).
 
-Ye "Two-Way Binding" jaisa lagta hai par manual control hota hai.
+// Ye "Two-Way Binding" jaisa lagta hai par manual control hota hai.
 
-```jsx
 import { useState } from 'react';
 
 function SimpleForm() {
@@ -30,15 +29,14 @@ function SimpleForm() {
     />
   );
 }
-```
-*Agar aap `onChange` hata denge, toh input field type karne par lock ho jayega kyunki state update nahi ho rahi.*
 
----
+// *Agar aap `onChange` hata denge, toh input field type karne par lock ho jayega kyunki state update nahi ho rahi.*
 
-## 🏗️ 2. Handling Multiple Inputs (Optimized)
-Agar form mein 10 fields hain, toh 10 `useState` aur 10 `handlers` banana bewaakoofi hai. Hum object state use karte hain.
+// ---
 
-```jsx
+// ## 🏗️ 2. Handling Multiple Inputs (Optimized)
+// Agar form mein 10 fields hain, toh 10 `useState` aur 10 `handlers` banana bewaakoofi hai. Hum object state use karte hain.
+
 function RegisterForm() {
   const [formData, setFormData] = useState({
     username: "",
@@ -80,11 +78,11 @@ function RegisterForm() {
     </form>
   );
 }
-```
 
----
 
-## 🕵️ 3. Uncontrolled Components (Bonus)
-Kabhi kabhi humein React state ki zarurat nahi hoti (e.g., Sirf value read karni hai, validation nahi chahiye on every keystroke).
-Iiske liye `useRef` hook use hota hai. Yeh direct DOM access leta hai (Classic HTML Style).
-Isse avoid karein unless zaroorat ho (like File Inputs).
+// ---
+
+// ## 🕵️ 3. Uncontrolled Components (Bonus)
+// Kabhi kabhi humein React state ki zarurat nahi hoti (e.g., Sirf value read karni hai, validation nahi chahiye on every keystroke).
+// Iiske liye `useRef` hook use hota hai. Yeh direct DOM access leta hai (Classic HTML Style).
+// Isse avoid karein unless zaroorat ho (like File Inputs).

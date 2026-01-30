@@ -119,6 +119,13 @@ console.table([typeof(a), typeof(b), typeof(c), typeof(d), typeof(e), typeof(f) 
 */
 
 // YOUR CODE HERE:
+let s1 = "10"
+let s2 = "20"
+let n1 = Number(s1)
+let n2 = Number(s2)
+
+let ans = n1 + n2
+console.log(ans);
 
 
 

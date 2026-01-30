@@ -48,7 +48,23 @@ console.log("--- 02 CONTROL FLOW & LOOPS ---");
 */
 
 // YOUR CODE HERE:
+let role = "admin";
 
+switch (role) {
+  case "admin":
+    console.log("Full Access");
+    break;
+  case "editor":
+    console.log("Limited Access");
+  default:
+    console.log("No Access");
+    
+    break;
+}
+
+
+const isLoggedIn = true
+isLoggedIn ? console.log("Welcome Back") : console.log("Please Login");
 
 
 
