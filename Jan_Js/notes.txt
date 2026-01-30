@@ -1,0 +1,9 @@
+Js is a programming lang which helps to interact with tbe computer
+
+In web D, it is used to make dynamic or logical website
+
+Js can be executed in one's browser on JS console.
+
+We can use node.js to run js code.
+
+Another way to execute js is by inserting it inside <script> tag of an HTML file.
