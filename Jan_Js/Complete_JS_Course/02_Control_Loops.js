@@ -94,9 +94,22 @@ isLoggedIn ? console.log("Welcome Back") : console.log("Please Login");
 */
 
 // YOUR CODE HERE:
+for(let i = 0; i < 5; i++){
+  console.log(i+1);
+  
+}
+console.log('\n');
 
 
-
+let i = 6
+while(i--){
+  if(i == 0){
+    break;
+  }
+  console.log(i);
+  
+}
+console.log('\n');
 
 // ------------------------------------------
 // 4. MODERN ITERATION (For...of)
@@ -113,7 +126,21 @@ isLoggedIn ? console.log("Welcome Back") : console.log("Please Login");
 
 // YOUR CODE HERE:
 
+let arr = ["HTML", "CSS", "JS", "REACT"]
 
+for(lang of arr){
+  console.log(lang);
+}
+
+console.log('\n');
+
+
+let str = "Hello"
+for(s of str){
+  console.log(s);
+  
+}
+console.log('\n');
 
 
 // ------------------------------------------
@@ -128,3 +155,12 @@ isLoggedIn ? console.log("Welcome Back") : console.log("Please Login");
 */
 
 // YOUR CODE HERE:
+for(let i = 1; i <= 10; i++){
+  if(i == 5){
+    continue;
+  }
+  else if(i == 8){
+    break;
+  }
+  console.log(i);
+}
