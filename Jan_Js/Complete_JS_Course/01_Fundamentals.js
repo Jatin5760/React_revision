@@ -100,6 +100,9 @@ let e = true;
 let f = BigInt('576');
 let g = undefined;
 
+console.table([typeof(a), typeof(b), typeof(c), typeof(d), typeof(e), typeof(f) , typeof(g)]);
+
+
 
 
 
