@@ -55,6 +55,20 @@ console.log("--- 03 FUNCTIONS ---");
 */
 
 // YOUR CODE HERE:
+function add(a, b) {
+  return a + b;
+}
+
+let ans = add(3, 4);
+console.log(ans);
+
+
+const multi = (a, b)=>{
+  return a * b;
+}
+
+let multiply = multi(7, 5);
+console.log(multiply);
 
 
 
