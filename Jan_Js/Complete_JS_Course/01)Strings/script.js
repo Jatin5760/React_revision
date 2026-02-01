@@ -62,7 +62,9 @@ console.log(modifiedStr);
 console.log(str.concat(' Jatin Sharma'));
 
 
-
+const lastFourDigit = "7980";
+const newNum = lastFourDigit.padStart(16, '*');
+console.log(newNum);
 
 
 
