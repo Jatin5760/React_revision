@@ -73,6 +73,10 @@ console.log(lastFourDigit.charAt(3)); // 0
 
 console.log(str.charCodeAt(5));
 
+console.log(str.split()); // give in array
+
+console.log(str.split(' '));
+
 
 
 
