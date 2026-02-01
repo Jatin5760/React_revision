@@ -1,11 +1,12 @@
 const message = "       Hello ";
 console.log(message[3]);
-console.log(message.length);
+
 
 // Property
 /*
     1) length
 */
+console.log(message.length);
 
 // Methods - String ka method string ko modify nhi karta bas ek naya result hamko de deta hai.
 /*
@@ -15,15 +16,38 @@ console.log(message.length);
     4) trimStart()
     5) trimEnd()
 */
-
 console.log(message.toUpperCase());
 console.log(message.toLowerCase());
 console.log(message.trim());
 console.log(message.trimStart());
 console.log(message.trimEnd());
 
+// Methods with arguments
+/*
+    1) includes()
+    2) indexOf()
+    3) replace()
+    4) replaceAll()
+    5) concat()
+    6) padStart()
+    7) charAt()
+    8) charCodeAt()
+    9) split()  
+*/
 
+const finalmessage = message.trim();
+console.log(finalmessage);
 
+console.log(finalmessage.includes("World!")); // False because it is not present in the actual string.
+
+console.log(finalmessage.indexOf('Z')); // -1 Not present
+console.log(finalmessage.indexOf('ll'));  // 2 index par mila
+
+ const replacedMsg = finalmessage.replace('Hello', 'Hello World!');
+ console.log(replacedMsg);
+
+ 
+ 
 
 
 
