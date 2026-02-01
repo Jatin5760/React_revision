@@ -38,15 +38,26 @@ console.log(message.trimEnd());
 const finalmessage = message.trim();
 console.log(finalmessage);
 
+
 console.log(finalmessage.includes("World!")); // False because it is not present in the actual string.
+
 
 console.log(finalmessage.indexOf('Z')); // -1 Not present
 console.log(finalmessage.indexOf('ll'));  // 2 index par mila
 
+
+
  const replacedMsg = finalmessage.replace('Hello', 'Hello World!');
  console.log(replacedMsg);
+ const replacedMsg2 = finalmessage.replace('o', 'O'); // Pure string mai jo bhi first occurance hai wo chnage hoga
+ console.log(replacedMsg2);
 
- 
+
+const str = "Hello World!";
+const modifiedStr = str.replaceAll('o', 'O'); // Modified all occurances.
+console.log(modifiedStr);
+
+
  
 
 
