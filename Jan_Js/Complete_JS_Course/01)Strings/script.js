@@ -69,6 +69,12 @@ console.log(newNum);
 
 
 
+console.log(lastFourDigit.charAt(3)); // 0
+
+console.log(str.charCodeAt(5));
+
+
+
 
 
 
