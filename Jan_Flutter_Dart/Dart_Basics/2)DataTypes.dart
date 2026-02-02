@@ -36,6 +36,6 @@ void main(){
   print(doubleOutput);
 
 
-  String stringOutput = 'text';
-  print(stringOutput);
+  String stringOutput = 'Jatin Sharma';
+  print('the value is $stringOutput');
 }
