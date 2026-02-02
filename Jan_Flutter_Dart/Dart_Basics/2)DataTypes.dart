@@ -56,9 +56,14 @@ void main(){
 
   // if we don't know the datatype we can use this, but it is not advisable to use dynamic.
   dynamic dynamicVariable = "Hello World!";
+  // dynamicVariable = 50; overwrite is allowed that's why it is bad.
   print(dynamicVariable);
 
-  
+
+
+  var varOutput = 69;
+  // varOutput = "text"; error we can't change the datatype. // overwrting is not allowed.
+  print(varOutput);
 
 
 }
