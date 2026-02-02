@@ -38,4 +38,27 @@ void main(){
 
   String stringOutput = 'Jatin Sharma';
   print('the value is $stringOutput');
+
+
+  late int exampleInt;
+  exampleInt = 34;
+  print(exampleInt);
+
+
+  final int finalInt = 2; // we can assign it in runtime but not in compile time
+  print(finalInt);
+  // finalInt = 3; gives error because we cannot change the final datatype.
+
+
+  const int constInt = 4; // we cannot assign it in runtime only compile time.
+  print(constInt);
+
+
+  // if we don't know the datatype we can use this, but it is not advisable to use dynamic.
+  dynamic dynamicVariable = "Hello World!";
+  print(dynamicVariable);
+
+  
+
+
 }
