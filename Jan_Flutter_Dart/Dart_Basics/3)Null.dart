@@ -1,7 +1,10 @@
 // Null 
 
+// ignore_for_file: unused_local_variable, duplicate_ignore
+
 void main(){
 
+  // ignore: unused_local_variable
   int nonNullable = 10; // This value cannot be null
   int? nullableInt = null; // This value can be null
   nullableInt = 20;
