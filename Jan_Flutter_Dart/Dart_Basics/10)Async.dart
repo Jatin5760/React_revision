@@ -7,3 +7,5 @@
 
   Also, some tasks take more time - with async we can wait for them to finish.
  */
+
+// async/await - wait for an event to occur in a thread/execution thread.
