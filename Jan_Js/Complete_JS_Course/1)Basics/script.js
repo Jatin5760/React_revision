@@ -21,15 +21,24 @@ let language = true;
 //console.log(typeof null); // Object
 
 
-
 // Variables
-
 let age = 30;
 age = 31;
 
 
 const birthYear = 1991;
 // birthYear = 1990; // give error because now this variable is immutable in nature.
+
+
+var job = 'programmer';
+job = 'teacher';
+
+name = 'Jatin';
+console.log(name);
+
+
+
+
 
 
 
